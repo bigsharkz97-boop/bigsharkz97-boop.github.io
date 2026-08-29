@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bigsharkz | Developer</title>
+  <meta name="description" content="Bigsharkz — technology, web development and useful digital projects.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1020;
+      color: #eef2ff;
+      line-height: 1.6;
+    }
+    .wrap { width: min(1050px, 92%); margin: auto; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 0;
+    }
+    .logo { font-size: 1.35rem; font-weight: 800; letter-spacing: .5px; }
+    nav a { color: #b9c3df; text-decoration: none; margin-left: 22px; }
+    nav a:hover { color: white; }
+    .hero { padding: 90px 0 75px; }
+    .tag {
+      display: inline-block; padding: 7px 13px; border: 1px solid #334064;
+      border-radius: 999px; color: #b9c3df; font-size: .9rem; margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(2.7rem, 8vw, 5.5rem); line-height: 1.02; max-width: 850px; }
+    .accent { color: #7dd3fc; }
+    .hero p { max-width: 650px; margin-top: 24px; color: #b9c3df; font-size: 1.12rem; }
+    .buttons { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 18px; border-radius: 10px;
+      text-decoration: none; font-weight: 700;
+    }
+    .primary { background: #eef2ff; color: #0b1020; }
+    .secondary { border: 1px solid #334064; color: #eef2ff; }
+    section { padding: 55px 0; }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      border: 1px solid #26304d; background: #11182b; border-radius: 16px;
+      padding: 24px;
+    }
+    .card h3 { margin-bottom: 9px; }
+    .card p { color: #aeb8d2; }
+    footer { padding: 45px 0; border-top: 1px solid #26304d; color: #8994b1; }
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero { padding-top: 55px; }
+      nav a { margin-left: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Bigsharkz</div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <span class="tag">Welcome to my corner of the web</span>
+        <h1>Building useful things with <span class="accent">technology.</span></h1>
+        <p>
+          Hi, I'm Bigsharkz. I'm interested in technology, web development,
+          digital projects, and creating useful tools for people.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn secondary" href="https://github.com/bigsharkz97-boop">GitHub profile</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About me</h2>
+        <div class="card">
+          <p>
+            I'm exploring the world of software and the web, learning by
+            building and experimenting. This page is my home base for future
+            projects and ideas.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Web Projects</h3>
+            <p>Websites and experiments I'm building and improving over time.</p>
+          </div>
+          <div class="card">
+            <h3>Firefox Add-ons</h3>
+            <p>Useful browser ideas and extensions for a better web experience.</p>
+          </div>
+          <div class="card">
+            <h3>Coming Soon</h3>
+            <p>More projects will appear here as I build them.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Bigsharkz · Built with HTML & CSS ·
+      <a href="https://github.com/bigsharkz97-boop" style="color:inherit;">GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
