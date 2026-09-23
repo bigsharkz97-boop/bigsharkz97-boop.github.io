@@ -1,31 +1,15 @@
+  max-width:
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Bigsharkz | AI Full-Stack Developer</title>
-
 <meta name="description" content="Bigsharkz — AI, web development, cybersecurity and digital projects.">
-
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #050505;
-  color: #f5f5f5;
-  line-height: 1.6;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Arial, Helvetica, sans-serif; background: #050505; color: #f5f5f5; line-height: 1.6; }
 :root {
   --gold: #d4af37;
   --gold-light: #f5d76e;
@@ -34,68 +18,23 @@ body {
   --border: #252525;
   --muted: #aaa;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1100px, 92%);
-  margin: auto;
-}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 92%); margin: auto; }
 
 /* NAVIGATION */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(5,5,5,.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
+nav { position: sticky; top: 0; z-index: 1000; background: rgba(5,5,5,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; color: white; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 25px; }
+.nav-links a { color: #bbb; font-weight: 600; transition: .3s; }
+.nav-links a:hover { color: var(--gold); }
+.menu { display: none; background: transparent; border: 1px solid var(--border); color: white; font-size: 1.5rem; padding: 8px 12px; border-radius: 8px; }
 
-.nav-inner {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: white;
-}
-
-.logo span {
-  color: var(--gold);
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: #bbb;
-  font-weight: 600;
-  transition: .3s;
-}
-
-.nav-links a:hover {
-  color: var(--gold);
-}
-
-.menu {
-  display: none;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: white;
-  font-size: 1.5rem;
-  padding: 8px 12px;
-  border-radius: 8px;
+@media (max-width: 720px) {
+  .nav-links { position: fixed; top: 72px; left: 0; right: 0; background: #0a0a0a; flex-direction: column; padding: 20px; gap: 18px; border-bottom: 1px solid var(--border); transform: translateY(-150%); transition: .3s; }
+  .nav-links.open { transform: translateY(0); }
+  .menu { display: block; }
 }
 
 /* HERO */
@@ -108,27 +47,145 @@ nav {
     radial-gradient(circle at 10% 80%, rgba(212,175,55,.06), transparent 30%),
     #050505;
 }
+.badge { display: inline-block; padding: 8px 15px; border: 1px solid rgba(212,175,55,.5); border-radius: 999px; color: var(--gold-light); font-size: .85rem; margin-bottom: 22px; }
+.hero h1 { font-size: clamp(3rem, 10vw, 6.5rem); line-height: .95; max-width: 850px; letter-spacing: -3px; }
+.hero h1 span { color: var(--gold); }
+.hero p { max-width: 560px; color: var(--muted); font-size: 1.15rem; margin: 28px 0 36px; }
+.btn-row { display: flex; gap: 18px; flex-wrap: wrap; }
+.btn { padding: 14px 30px; border-radius: 10px; font-weight: 700; }
+.btn-primary { background: var(--gold); color: #050505; }
+.btn-primary:hover { background: var(--gold-light); }
+.btn-ghost { border: 1px solid var(--border); color: #eee; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
-.badge {
-  display: inline-block;
-  padding: 8px 15px;
-  border: 1px solid rgba(212,175,55,.5);
-  border-radius: 999px;
-  color: var(--gold-light);
-  font-size: .85rem;
-  margin-bottom: 22px;
-}
+/* SECTIONS */
+section { padding: 100px 0; }
+.section-tag { color: var(--gold); font-weight: 700; letter-spacing: 2px; font-size: .8rem; text-transform: uppercase; }
+.section-title { font-size: clamp(2rem, 5vw, 2.8rem); margin: 10px 0 50px; }
 
-.hero h1 {
-  font-size: clamp(3rem, 10vw, 6.5rem);
-  line-height: .95;
-  max-width: 850px;
-  letter-spacing: -3px;
-}
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 26px; transition: .3s; }
+.skill-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.skill-card h3 { color: var(--gold-light); margin-bottom: 8px; }
+.skill-card p { color: var(--muted); font-size: .95rem; }
 
-.hero h1 span {
-  color: var(--gold);
-}
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.project-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 14px; }
+.project-card h3 { font-size: 1.3rem; }
+.project-card p { color: var(--muted); font-size: .95rem; flex-grow: 1; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: .75rem; color: var(--gold-light); border: 1px solid rgba(212,175,55,.35); padding: 4px 10px; border-radius: 999px; }
+.project-link { color: var(--gold); font-weight: 700; }
+.project-link:hover { color: var(--gold-light); }
 
-.hero p {
-  max-width:
+/* GOAL */
+.goal { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 50px; text-align: center; }
+.goal p { max-width: 650px; margin: 0 auto; color: #ddd; font-size: 1.1rem; }
+
+/* CONTACT */
+.contact-box { background: linear-gradient(135deg, rgba(212,175,55,.1), transparent); border: 1px solid var(--border); border-radius: 20px; padding: 50px; text-align: center; }
+.contact-box p { color: var(--muted); margin: 14px 0 30px; }
+.contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">BIG<span>SHARKZ</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#goal">Goal</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">Available for internships</div>
+    <h1>Building with <span>AI</span> & code.</h1>
+    <p>I'm Daniel — an aspiring AI and full-stack developer learning to design intelligent agent systems, secure web apps, and clean, scalable software.</p>
+    <div class="btn-row">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-tag">What I Work With</div>
+    <h2 class="section-title">Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>AI & Agents</h3><p>Designing AI agent workflows and exploring applied machine learning.</p></div>
+      <div class="skill-card"><h3>Full-Stack Web Dev</h3><p>HTML, CSS, JavaScript, and backend fundamentals for real products.</p></div>
+      <div class="skill-card"><h3>Cybersecurity</h3><p>Learning security principles to build safer, more resilient systems.</p></div>
+      <div class="skill-card"><h3>Linux</h3><p>Comfortable working in Linux environments and the command line.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-tag">Selected Work</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>AI Co-Worker System</h3>
+        <p>A multi-agent AI/human "co-worker" ecosystem concept — email auto-reply, workspace integration, and remote-work support tooling.</p>
+        <div class="tag-row"><span class="tag">AI Agents</span><span class="tag">Automation</span></div>
+        <a href="#" class="project-link">Learn more →</a>
+      </div>
+      <div class="project-card">
+        <h3>Broker / Investor Site</h3>
+        <p>A personal broker and investment site concept with a client workspace for chatting with prospective investors.</p>
+        <div class="tag-row"><span class="tag">Full-Stack</span><span class="tag">Fintech</span></div>
+        <a href="#" class="project-link">Learn more →</a>
+      </div>
+      <div class="project-card">
+        <h3>Developer Portfolio</h3>
+        <p>My first professional portfolio, hand-built with HTML & CSS and deployed on GitHub Pages — improved step by step as I learn.</p>
+        <div class="tag-row"><span class="tag">HTML/CSS</span><span class="tag">GitHub Pages</span></div>
+        <a href="https://bigsharkz97-boop.github.io/ai-fullstack-journey/" class="project-link" target="_blank" rel="noopener">View live site →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="goal">
+  <div class="container">
+    <div class="section-tag" style="text-align:center; display:block;">Where I'm Headed</div>
+    <h2 class="section-title" style="text-align:center;">Current Goal</h2>
+    <div class="goal">
+      <p>I'm focused on landing an internship or entry-level role where I can grow as an AI and full-stack developer — learning fast, shipping real projects, and contributing to a team from day one.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <h2 class="section-title" style="margin-bottom:0;">Let's Connect</h2>
+      <p>Open to internships, junior roles, and collaboration on AI or web projects.</p>
+      <div class="contact-links">
+        <a href="mailto:bigsharkz97@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://github.com/bigsharkz97-boop" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://bigsharkz97-boop.github.io/ai-fullstack-journey/" class="btn btn-ghost" target="_blank" rel="noopener">Portfolio Site</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Daniel "Bigsharkz" Eshiet. Built with intent.</div>
+</footer>
+
+</body>
+</html>
